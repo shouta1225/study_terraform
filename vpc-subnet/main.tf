@@ -1,7 +1,6 @@
 provider "aws" {
   region="ap-northeast-1"
 }
-
 resource "aws_vpc" "terra_vpc" {// terra_vpcはterraform上で管理するための名前（AWS上にできるリソース名には使われない）
 
   cidr_block = "10.0.0.0/16"
@@ -10,7 +9,6 @@ resource "aws_vpc" "terra_vpc" {// terra_vpcはterraform上で管理するため
   }
   
 }
-
 resource "aws_subnet" "terra_subnet" {
 
   vpc_id = aws_vpc.terra_vpc.id
